@@ -1,0 +1,75 @@
+package com.trabajo.web.app.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.trabajo.web.app.models.Cliente;
+import com.trabajo.web.app.services.ClienteService;
+
+@CrossOrigin(origins = {"http://localhost:4200"})
+@RestController
+@RequestMapping("/api")
+public class ClienteController {
+	
+	@Autowired
+	private ClienteService clienteService;
+	
+	
+	@GetMapping("/clientes")
+	public List<Cliente> getClientes() {
+		return clienteService.getCliente();
+	}
+
+	@GetMapping("/clientes/{clienteId}")
+	public Cliente getCliente(@PathVariable int clienteId) {
+
+		Cliente cliente = clienteService.getCliente(clienteId);
+
+		return cliente;
+	}
+
+	// add mapping for POST /customers - add new customer
+
+	@PostMapping("/customers")
+	@ResponseStatus(HttpStatus.CREATED)
+	public Customer addCustomer(@RequestBody Customer customer) {
+
+		// also just in case the pass an id in JSON ... set id to 0
+		// this is force a save of new item ... instead of update
+
+		customer.setId(null);
+
+		customerService.saveCustomer(customer);
+
+		return customer;
+	}
+	
+	// add mapping for PUT /customers - update existing customer
+	
+	@PutMapping("/customers")
+	@ResponseStatus(HttpStatus.CREATED)
+	public Customer updateCustomer(@RequestBody Customer customer) {
+		
+		customerService.saveCustomer(customer);
+		
+		return customer;
+	}
+	
+	
+	//add mapping for DELETE /customers/{customerId} - delete existing customer
+	@DeleteMapping("/customers/{customerId}")
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void deleteCustomer(@PathVariable int customerId) {
+		
+		customerService.deleteCustomer(customerId);
+	}
+
+	
+
+}

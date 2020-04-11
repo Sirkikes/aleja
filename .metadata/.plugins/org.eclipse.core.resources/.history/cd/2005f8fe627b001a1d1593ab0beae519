@@ -1,0 +1,41 @@
+package com.trabajo.web.app.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.trabajo.web.app.daos.IMedicamentoRepository;
+import com.trabajo.web.app.models.Medicamentos;
+
+public class MedicamentosServicesImpl implements MedicamentosServices{
+	
+	@Autowired
+	private IMedicamentoRepository iMedicamentoRepository;
+
+	@Override
+	public List<Medicamentos> getMedicamentos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void saveMedicamentos(Medicamentos medicamentos) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Medicamentos getMedicamentos(Integer Id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteMedicamentos(Integer Id) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+
+}

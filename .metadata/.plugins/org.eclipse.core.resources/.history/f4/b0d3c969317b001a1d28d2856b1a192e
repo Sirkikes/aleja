@@ -1,0 +1,7 @@
+package com.trabajo.web.app.services;
+
+public interface ClienteService {
+	
+	
+
+}

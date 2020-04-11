@@ -1,0 +1,5 @@
+package com.trabajo.web.app.services;
+
+public class MedicamentosServicesImpl {
+
+}

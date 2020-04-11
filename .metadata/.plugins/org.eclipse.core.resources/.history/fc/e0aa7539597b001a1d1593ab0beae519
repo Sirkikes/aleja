@@ -1,0 +1,28 @@
+package com.trabajo.web.app.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.trabajo.web.app.daos.IMascotaRepository;
+import com.trabajo.web.app.models.Mascota;
+
+public class MascotaServiceImpl {
+	
+	@Autowired
+	private IMascotaRepository iMascotaRepository;
+	
+	@Transactional(readOnly=true)
+	public List<Mascota> getMascota() {
+		return (List<Mascota>) iMascotaRepository.findAll();
+	}
+	
+	
+	public void saveMascota(Mascota mascota) {
+		iMascotaRepository.save(mascota);
+	}
+
+	
+
+}

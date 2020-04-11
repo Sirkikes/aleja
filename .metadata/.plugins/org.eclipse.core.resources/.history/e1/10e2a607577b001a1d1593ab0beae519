@@ -1,0 +1,9 @@
+package com.trabajo.web.app.daos;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.trabajo.web.app.models.Medicamento;
+
+public interface IMedicamentoRepository extends CrudRepository<Medicamento, Integer> {
+
+}

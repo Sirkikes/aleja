@@ -1,0 +1,39 @@
+package com.trabajo.web.app.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.trabajo.web.app.daos.IClienteRepository;
+import com.trabajo.web.app.models.Cliente;
+
+public class ClienteServiceImpl implements ClienteService{
+	
+	@Autowired
+	private IClienteRepository iClienteRepository;
+
+	@Override
+	public List<Cliente> getCliente() {
+		// TODO Auto-generated method stub
+		return (List<Cliente>) iClienteRepository.findAll();
+	}
+
+	@Override
+	public void saveCliente(Cliente cliente) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Cliente getCliente(Integer Id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteCliente(Integer Id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

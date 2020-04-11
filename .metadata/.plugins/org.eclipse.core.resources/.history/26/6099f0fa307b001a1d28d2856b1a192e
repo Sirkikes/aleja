@@ -1,0 +1,9 @@
+package com.trabajo.web.app.services;
+
+import java.util.List;
+
+public class PersonaService {
+	
+	public List<Cliente> getCliente();
+
+}

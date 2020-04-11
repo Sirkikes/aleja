@@ -1,0 +1,5 @@
+package com.trabajo.web.app.daos;
+
+public interface IClienteRepository {
+
+}
