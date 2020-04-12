@@ -15,22 +15,26 @@
 		<br> <br> <br> <br>
 		<h1 align="center">ADMINISTRACION</h1>
 		<br>
-		<table class="table table-borderless">
+		<table class="table table-striped">
 			<thead>
 				<tr>
-					<th scope="col">
-						<button type="button" class="btn btn-primary">Clientes</button>
-					</th>
-					<th scope="col">
-						<button type="button" class="btn btn-secondary">Mascotas</button>
-					</th>
-					<th scope="col">
-						<button type="button" class="btn btn-success">Medicamentos</button>
-					</th>
+					<th scope="col">#</th>
+					<th scope="col">First</th>
+					<th scope="col">Last</th>
+					<th scope="col">Handle</th>
 				</tr>
 			</thead>
 			
 		</table>
+
+		<div>
+			<br>
+			<br>
+			<br>
+			<button type="button" class="btn btn-primary">Clientes</button>
+			<button type="button" class="btn btn-secondary">Mascotas</button>
+			<button type="button" class="btn btn-success">Medicamentos</button>
+		</div>
 	</div>
 
 </body>

@@ -35,8 +35,8 @@
 						<td th:text="${cliente.apellido}">
 						<td th:text="${cliente.direccion}">
 						<td th:text="${cliente.telefono}">
-						<td><a th:href="@{/api/clientes/{id}(id=${cliente.id})}">Actualizar</a></td>
-						<td><a th:href="@{/api/delete/{id}(id=${cliente.id})}">Eliminar</a></td>
+						<td><a th:href="@{/clientes/{id}(id=${cliente.id})}">Actualizar</a></td>
+						<td><a th:href="@{/delete/{id}(id=${cliente.id})}">Eliminar</a></td>
 						</tr>
 					</tbody>
 				</table>
