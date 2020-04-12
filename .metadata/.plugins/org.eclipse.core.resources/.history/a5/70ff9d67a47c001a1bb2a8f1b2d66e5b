@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="th=http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>ADMINISTRACION</title>
+
+<!-- Bootstrap CSS -->
+<link href="../static/css/bootstrap.css" rel="stylesheet"
+	th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+	<div class="container">
+		<br>
+		<div>
+			<a href="/clientes/null" class="btn btn-guardarCliente">Agregar</a>
+		</div>
+		<div th:switch="${list}">
+			<div>
+				<h2>Clientes</h2>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Nombre</th>
+							<th>Apellidos</th>
+							<th>Direccion</th>
+							<th>Telefono</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="cliente : ${list}">
+						<td th:text="${cliente.nombre}">
+						<td th:text="${cliente.apellido}">
+						<td th:text="${cliente.direccion}">
+						<td th:text="${cliente.telefono}">
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

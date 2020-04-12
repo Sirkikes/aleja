@@ -14,52 +14,55 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.trabajo.web.app.models.Mascota;
-import com.trabajo.web.app.services.MascotaService;
+import com.trabajo.web.app.models.Cliente;
+import com.trabajo.web.app.services.ClienteService;
 
 //@CrossOrigin(origins = {"http://localhost:4200"})
 @RestController
-@RequestMapping("/api")
-public class MascotaController {
+@RequestMapping("/")
+public class ClienteController {
 	
 	@Autowired
-	private MascotaService mascotaService;
+	private ClienteService clienteService;
 	
-	@GetMapping("/mascotas")
-	public List<Mascota> getMascota() {
-		return mascotaService.getMascota();
+	
+	@GetMapping("/clientes")
+	public List<Cliente> getClientes() {
+		return clienteService.getCliente();
 	}
 
-	@GetMapping("/mascotas/{id}")
-	public Mascota getMascota(@PathVariable(name="id") Integer mascotaId) {
-		Mascota mascota = mascotaService.getMascota(mascotaId);
-		return mascota;
+	@GetMapping("/clientes/{clienteId}")
+	public Cliente getCliente(@PathVariable int clienteId) {
+
+		Cliente cliente = clienteService.getCliente(clienteId);
+
+		return cliente;
 	}
 
 	
-	@PostMapping("/mascotas")
+	@PostMapping("/clientes")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Mascota addMascota(@RequestBody Mascota mascota) {
+	public Cliente addCliente(@RequestBody Cliente cliente) {
 
-		mascota.setId(null);
-		mascotaService.saveMascota(mascota);
-		return mascota;
+		cliente.setId(null);
+		clienteService.saveCliente(cliente);
+		return cliente;
 	}
 	
 		
-	@PutMapping("/mascotas")
+	@PutMapping("/clientes")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Mascota updateMascota(@RequestBody Mascota mascota) {
+	public Cliente updateCliente(@RequestBody Cliente cliente) {
 		
-		mascotaService.saveMascota(mascota);
-		return mascota;
+		clienteService.saveCliente(cliente);
+		return cliente;
 	}
 	
-	@DeleteMapping("/delete/{mascotaId}")
+	@DeleteMapping("/delete/{clientesId}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void deleteMascota(@PathVariable int mascotaId) {
+	public void deleteCliente(@PathVariable int clienteId) {
 		
-		mascotaService.deleteMascota(mascotaId);
+		clienteService.deleteCliente(clienteId);
 	}
 
 }

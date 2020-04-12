@@ -1,0 +1,19 @@
+DOCTYPE html>
+<html xmlns="th=http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>CLIENTES</title>
+
+<!-- Bootstrap CSS -->
+<link href="../static/css/bootstrap.css" rel="stylesheet"
+	th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+<div>
+<form action="#" th:action="@{/clientes>}" class="form-group" th:object>
+
+</form>
+</div>
+
+</body>
+</html>
