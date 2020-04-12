@@ -55,7 +55,7 @@ public class MedicamentoController {
 		return medicamentos;
 	}
 	
-	@DeleteMapping("/delete/{medicamentosId}")
+	@DeleteMapping("/medicamentos/{medicamentosId}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void deleteMedicamentos(@PathVariable int medicamentosId) {
 		

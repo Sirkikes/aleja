@@ -55,7 +55,7 @@ public class MascotaController {
 		return mascota;
 	}
 	
-	@DeleteMapping("/delete/{mascotaId}")
+	@DeleteMapping("/mascotas/{mascotaId}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void deleteMascota(@PathVariable int mascotaId) {
 		
