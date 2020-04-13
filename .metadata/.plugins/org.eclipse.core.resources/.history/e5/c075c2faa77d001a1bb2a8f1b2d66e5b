@@ -19,7 +19,9 @@
 			<thead>
 				<tr>
 					<th scope="col">
-						<button type="button" class="btn btn-primary">Clientes</button>
+						<button type="button" class="btn btn-primary">
+							<a href="/trabajoRest/src/main/resources/templates/clientes.html">Clientes</a>
+						</button>
 					</th>
 					<th scope="col">
 						<button type="button" class="btn btn-secondary">Mascotas</button>

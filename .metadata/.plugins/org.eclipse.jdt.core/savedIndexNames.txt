@@ -64,7 +64,6 @@ INDEX VERSION 1.131+C:\Users\kike1\Desktop\Trabajo Aleja\.metadata\.plugins\org.
 1490307882.index
 1775758307.index
 1008990745.index
-3298512148.index
 3388056702.index
 2408494902.index
 3771332041.index

@@ -11,7 +11,7 @@
 	<div class="container">
 		<br>
 		<div>
-			<a href="/api/clientes/null" class="btn btn-guardarCliente">Agregar</a>
+			<!--  <a href="/api/clientes/null" class="btn btn-guardarCliente">Agregar</a>
 		</div>
 		
 		<h2 th:if="${list.isEmpty()}">No hay Cliente Registrados</h2>

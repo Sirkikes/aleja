@@ -3,6 +3,7 @@ import { Customer } from '../../model/customer';
 import { CustomerService } from '../../services/customer.service';
 import { Router } from '@angular/router';
 import swal from 'sweetalert2';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-list-customer',
@@ -19,24 +20,21 @@ export class ListCustomerComponent implements OnInit {
   }
 
   deleteCustomer(customer: Customer): void {
-    swal({
-      title: 'Está seguro?',
-      text: `¿Seguro desea eliminar al cliente ${customer.firstName} ${
-        customer.lastName
-      }?`,
-      type: 'warning',
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Si, eliminar!',
-      cancelButtonText: 'Cancelar'
-    }).then(result => {
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
       if (result.value) {
-        this.service.deleteCustomer(customer.id).subscribe(data => {
-          this.customers = this.customers.filter(c => c !== customer);
-        });
-
-        swal('Eliminado!', 'Se ha eliminado el cliente.', 'success');
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
       }
     });
   }
