@@ -30,11 +30,28 @@ export class ListCustomerComponent implements OnInit {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.value) {
-        Swal.fire(
-          'Deleted!',
-          'Your file has been deleted.',
-          'success'
-        )
+        this.service.deleteCustomer(customer.id).subscribe({
+          next: result => {
+            Swal.fire(
+              'Deleted!',
+              'Your file has been deleted.',
+              'success'
+            );
+            this.service.getCustomers().subscribe({
+              next: result => {
+                this.customers=result;
+              }
+            });
+          },
+          error: error => {
+            Swal.fire(
+              'Error!',
+               error,
+              'warning'
+            );
+          }
+        })
+
       }
     });
   }

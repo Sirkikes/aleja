@@ -1,28 +1,33 @@
 <div class="col">
   <h2 class="text-center">Agregar Cliente</h2>
-  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+ <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
 
-    <div class="form-group">
-      <label for="firstName">Nombre:</label>
-      <input formControlName="firstName" placeholder="Nombre" name="firstName" class="form-control" id="firstName" required>
+  <div class="form-group">
+    <label for="cedula">Cedula:</label>
+    <input formControlName="cedula" placeholder="Cedula" name="cedula" class="form-control" id="cedula" required>
+  </div>
+
+  <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input formControlName="nombre" placeholder="Nombre" name="nombre" class="form-control" id="nombre" required>
     </div>
 
     <div class="form-group">
-      <label for="lastName">Apellido:</label>
-      <input formControlName="lastName" placeholder="Apellido" name="lastName" class="form-control" id="lastName" required>
+      <label for="apellido">Apellido:</label>
+      <input formControlName="apellido" placeholder="Apellido" name="apellido" class="form-control" id="apellido" required>
     </div>
 
     <div class="form-group">
-      <label for="address">Direccion:</label>
-      <input type="address" formControlName="Address" placeholder="address" name="address" class="form-control" id="address" required>
+      <label for="direccion">Direccion:</label>
+      <input type="direccion" formControlName="direccion" placeholder="Direccion" name="direccion" class="form-control" id="direccion" required>
     </div>
 
     <div class="form-group">
-      <label for="phone">Telefono:</label>
-      <input type="phone" formControlName="phone" placeholder="Phone" name="phone" class="form-control" id="phone" required>
+      <label for="telefono">Telefono:</label>
+      <input type="telefono" formControlName="telefono" placeholder="Telefono" name="telefono" class="form-control" id="telefono" required>
     </div>
 
-    <button class="btn btn-success">Aceptar</button>
+    <button type="submit" class="btn btn-success">Aceptar</button>
     <button class="btn btn-primary" routerLink="list-customer">Regresar</button>
   </form>
 </div>

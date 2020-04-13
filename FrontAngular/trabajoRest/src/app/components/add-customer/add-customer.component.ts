@@ -17,11 +17,11 @@ export class AddCustomerComponent implements OnInit {
 
   ngOnInit() {
     this.addForm = this.formBuilder.group({
-      id: [],
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      address: ['', Validators.required],
-      phone: ['', Validators.required]
+      cedula: ['', Validators.required],
+      nombre: ['', Validators.required],
+      apellido: ['', Validators.required],
+      direccion: ['', Validators.required],
+      telefono: ['', Validators.required],
     });
   }
 
@@ -32,7 +32,7 @@ export class AddCustomerComponent implements OnInit {
         Swal.fire({
           title: 'Cliente creado con éxito!',
           //text: 'Do you want to continue',
-           icon: 'error',
+           icon: 'success',
            confirmButtonText: 'Cool'
         });
        /* swal({

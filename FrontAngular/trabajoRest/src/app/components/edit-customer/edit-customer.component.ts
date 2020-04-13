@@ -4,7 +4,6 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CustomerService } from '../../services/customer.service';
 import { Router } from '@angular/router';
 import {first} from 'rxjs/operators';
-import swal from 'sweetalert2';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -31,14 +30,23 @@ export class EditCustomerComponent implements OnInit {
 
     this.editForm = this.formBuilder.group({
       id: [],
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      email: ['', Validators.required]
+      cedula: ['', Validators.required],
+      nombre: ['', Validators.required],
+      apellido: ['', Validators.required],
+      direccion: ['', Validators.required],
+      telefono: ['', Validators.required]
     });
 
     this.service.getCustomer(+customerId)
       .subscribe(data => {
-        this.editForm.setValue(data);
+        this.editForm.patchValue({
+          id: data.id,
+          cedula: data.cedula,
+          nombre: data.nombre,
+          apellido: data.apellido,
+          direccion: data.direccion,
+          telefono: data.telefono
+        });
       });
   }
 
@@ -48,10 +56,10 @@ export class EditCustomerComponent implements OnInit {
       .subscribe( data => {
         this.router.navigate(['list-customer']);
 
-        swal({
-          position: 'top',
-          type: 'success',
-          title: `Cliente modificado con éxito`,
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Cliente modificado con exito',
           showConfirmButton: false,
           timer: 1500
         });

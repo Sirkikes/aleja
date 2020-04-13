@@ -5,19 +5,22 @@
     <thead>
       <tr>
         <th class="hidden">Id</th>
+        <th>Cedula</th>
         <th>Nombre</th>
         <th>Apellido</th>
-        <th>Email</th>
-        <th>Acción</th>
+        <th>Direccion</th>
+        <th>Telefono</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let customer of customers">
         <td class="hidden">{{ customer.id }}</td>
-        <td>{{ customer.firstName }}</td>
-        <td>{{ customer.lastName }}</td>
-        <td>{{ customer.addres }}</td>
-        <td>{{ customer.phone }}</td>
+        <td>{{ customer.cedula }}</td>
+        <td>{{ customer.nombre }}</td>
+        <td>{{ customer.apellido }}</td>
+        <td>{{ customer.direccion }}</td>
+        <td>{{ customer.telefono }}</td>
         <td>
           <button class="btn btn-success" (click)="editCustomer(customer)">
             Editar
