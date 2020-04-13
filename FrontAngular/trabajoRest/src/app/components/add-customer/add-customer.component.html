@@ -1,1 +1,28 @@
-<p>add-customer works!</p>
+<div class="col">
+  <h2 class="text-center">Agregar Cliente</h2>
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="firstName">Nombre:</label>
+      <input formControlName="firstName" placeholder="Nombre" name="firstName" class="form-control" id="firstName" required>
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Apellido:</label>
+      <input formControlName="lastName" placeholder="Apellido" name="lastName" class="form-control" id="lastName" required>
+    </div>
+
+    <div class="form-group">
+      <label for="address">Direccion:</label>
+      <input type="address" formControlName="address" placeholder="Address" name="address" class="form-control" id="address" required>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Telefono:</label>
+      <input type="phone" formControlName="phone" placeholder="Phone" name="phone" class="form-control" id="phone" required>
+    </div>
+
+    <button class="btn btn-success">Aceptar</button>
+    <button class="btn btn-primary" routerLink="list-customer">Regresar</button>
+  </form>
+</div>
