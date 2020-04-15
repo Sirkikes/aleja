@@ -20,6 +20,7 @@ import { RouterModule } from '@angular/router';
 
 // Importar ReactiveFormsModule para los formularios
 import { ReactiveFormsModule } from '@angular/forms';
+import { InicioComponent } from './components/inicio/inicio.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ListMascotasComponent,
     AddMedicamentosComponent,
     EditMedicamentosComponent,
-    ListMedicamentosComponent
+    ListMedicamentosComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,

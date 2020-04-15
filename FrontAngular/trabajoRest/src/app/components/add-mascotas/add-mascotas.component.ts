@@ -19,7 +19,7 @@ export class AddMascotasComponent implements OnInit {
   ngOnInit() {
     this.addForm = this.formBuilder.group({
       id: [],
-      name: ['', Validators.required],
+      nombre: ['', Validators.required],
       raza: ['', Validators.required],
       edad: ['', Validators.required],
       peso: ['', Validators.required],

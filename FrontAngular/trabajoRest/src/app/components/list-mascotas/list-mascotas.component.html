@@ -1,1 +1,38 @@
-<p>list-mascotas works!</p>
+<div class="col">
+  <h2>Mascotas</h2>
+  <button class="btn btn-primary" (click)="addMascotas()">Agregar Mascota</button>
+  <button class="btn btn-secundary" routerLink="/">Volver</button>
+  <table class="table table-striped">
+  <thead>
+  <tr>
+    <th class="hidden">Id</th>
+    <th>Nombre</th>
+    <th>Raza</th>
+    <th>Edad</th>
+    <th>Peso</th>
+    <th>Propietario</th>
+    <th>Medicamento</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let mascotas of mascotas">
+    <td class="hidden">{{ mascotas.id }}</td>
+    <td>{{ mascotas.nombre }}</td>
+    <td>{{ mascotas.raza }}</td>
+    <td>{{ mascotas.edad }}</td>
+    <td>{{ mascotas.peso }}</td>
+    <td>{{ mascotas.propietario}}</td>
+    <td>{{ mascotas.medicamento}}</td>
+    <td>
+      <button class="btn btn-success" (click)="editMascotas(mascotas)">
+        Editar
+      </button>
+      <button class="btn btn-danger" (click)="deleteMascotas(mascotas)">
+        Borrar
+      </button>
+    </td>
+  </tr>
+  </tbody>
+  </table>
+</div>
