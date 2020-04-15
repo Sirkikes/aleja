@@ -1,0 +1,35 @@
+<div class="col">
+  <h2>Clientes</h2>
+  <button class="btn btn-primary" (click)="addCustomer()">Agregar Cliente</button>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th class="hidden">Id</th>
+        <th>Cedula</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Direccion</th>
+        <th>Telefono</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers">
+        <td class="hidden">{{ customer.id }}</td>
+        <td>{{ customer.cedula }}</td>
+        <td>{{ customer.nombre }}</td>
+        <td>{{ customer.apellido }}</td>
+        <td>{{ customer.direccion }}</td>
+        <td>{{ customer.telefono }}</td>
+        <td>
+          <button class="btn btn-success" (click)="editCustomer(customer)">
+            Editar
+          </button>
+          <button class="btn btn-danger" (click)="deleteCustomer(customer)">
+            Borrar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
