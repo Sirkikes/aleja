@@ -21,7 +21,7 @@ export class AddMedicamentosComponent implements OnInit {
       id: [],
       identificacion: ['', Validators.required],
       nombre: ['', Validators.required],
-      dosis: ['', Validators.required],
+      dosis: ['', Validators.required]
    });
   }
 
@@ -31,8 +31,7 @@ export class AddMedicamentosComponent implements OnInit {
         this.router.navigate(['list-medicamentos']);
         Swal.fire({
           title: 'Medicamento creado con éxito!',
-          //text: 'Do you want to continue',
-           icon: 'error',
+           icon: 'success',
            confirmButtonText: 'Cool'
         });
        /* swal({

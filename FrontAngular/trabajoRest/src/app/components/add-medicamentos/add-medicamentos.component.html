@@ -3,8 +3,8 @@
   <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
 
     <div class="form-group">
-      <label for="id">Id:</label>
-      <input formControlName="id" placeholder="Id" name="id" class="form-control" id="id" required>
+      <label for="identificacion">Identificacion:</label>
+      <input formControlName="identificacion" placeholder="Identificacion" name="identificacion" class="form-control" id="identificacion" required>
     </div>
 
     <div class="form-group">
@@ -12,9 +12,13 @@
       <input formControlName="nombre" placeholder="Nombre" name="nombre" class="form-control" id="nombre" required>
     </div>
 
+    <div class="form-group">
+      <label for="dosis">Dosis:</label>
+      <input formControlName="dosis" placeholder="Dosis" name="dosis" class="form-control" id="dosis" required>
+    </div>
+
+
     <button class="btn btn-success">Aceptar</button>
     <button class="btn btn-primary" routerLink="/list-medicamentos">Regresar</button>
   </form>
 </div>
-
-

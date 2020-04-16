@@ -1,1 +1,34 @@
-<p>list-medicamentos works!</p>
+<div class="col">
+  <h2>Medicamentos</h2>
+  <button class="btn btn-primary" (click)="addMedicamentos()">Agregar Medicamento</button>
+  <button class="btn btn-secundary" routerLink="/">Volver</button>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="hidden">Id</th>
+      <th>Identificacion</th>
+      <th>Nombre</th>
+      <th>Dosis</th>
+      <th></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let medicamentos of medicamentos">
+      <td class="hidden">{{ medicamentos.id }}</td>
+      <td>{{ medicamentos.identificacion }}</td>
+      <td>{{ medicamentos.nombre }}</td>
+      <td>{{ medicamentos.dosis }}</td>
+      <td>
+        <button class="btn btn-success" (click)="editMedicamentos(medicamentos)">
+          Editar
+        </button>
+        <button class="btn btn-danger" (click)="deleteMedicamentos(medicamentos)">
+          Borrar
+        </button>
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

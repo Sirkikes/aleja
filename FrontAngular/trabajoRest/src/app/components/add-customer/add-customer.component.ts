@@ -33,7 +33,7 @@ export class AddCustomerComponent implements OnInit {
           title: 'Cliente creado con éxito!',
           //text: 'Do you want to continue',
            icon: 'success',
-           confirmButtonText: 'Cool'
+           confirmButtonText: 'Aceptar'
         });
        /* swal({
           position: 'top',
