@@ -18,7 +18,7 @@ export class ListMedicamentosComponent implements OnInit {
     this.service.getMedicamentos().subscribe(data => (this.medicamentos = data));
   }
 
-  deleteCustomer(medicamentos: Medicamentos): void {
+  deleteMedicamentos(medicamentos: Medicamentos): void {
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -29,11 +29,28 @@ export class ListMedicamentosComponent implements OnInit {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.value) {
-        Swal.fire(
-          'Deleted!',
-          'Your file has been deleted.',
-          'success'
-        )
+        this.service.deleteMedicamentos(medicamentos.id).subscribe({
+          next: result => {
+            Swal.fire(
+              'Deleted!',
+              'Your file has been deleted.',
+              'success'
+            );
+            this.service.getMedicamentos().subscribe({
+              next: result => {
+                this.medicamentos=result;
+              }
+            });
+          },
+          error: error => {
+            Swal.fire(
+              'Error!',
+               error,
+              'warning'
+            );
+          }
+        })
+
       }
     });
 
@@ -49,4 +66,3 @@ export class ListMedicamentosComponent implements OnInit {
     this.router.navigate(['add-medicamentos']);
   }
 }
-

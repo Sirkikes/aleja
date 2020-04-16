@@ -32,6 +32,7 @@ export class AddMedicamentosComponent implements OnInit {
         Swal.fire({
           title: 'Medicamento creado con éxito!',
            icon: 'error',
+           icon: 'success',
            confirmButtonText: 'Cool'
         });
        /* swal({

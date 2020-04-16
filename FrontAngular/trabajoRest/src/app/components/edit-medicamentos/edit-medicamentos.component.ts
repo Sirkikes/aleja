@@ -23,6 +23,7 @@ export class EditMedicamentosComponent implements OnInit {
 
   ngOnInit(): void {
     const medicamentosId = localStorage.getItem('editMedicamentos');
+    const medicamentosId = localStorage.getItem('editMedicamentosId');
     if (!medicamentosId){
       alert('Acción invalida');
       this.router.navigate(['list-medicamentos']);

@@ -8,7 +8,9 @@
       <th class="hidden">Id</th>
       <th>Nombre</th>
       <th>Dosis</th>
-
+      <th>Identificacion</th>
+      <th>Nombre</th>
+      <th>Dosis</th>
       <th></th>
     </tr>
     </thead>
@@ -17,15 +19,16 @@
     <tr *ngFor="let medicamentos of medicamentos">
       <td class="hidden">{{ medicamentos.id }}</td>
       <td>{{ medicamentos.nombre }}</td>
-
-
+      <td>{{ medicamentos.identificacion }}</td>
+      <td>{{ medicamentos.nombre }}</td>
+      <td>{{ medicamentos.dosis }}</td>
       <td>
         <button class="btn btn-success" (click)="editMedicamentos(medicamentos)">
           Editar
         </button>
-
-
-
+        <button class="btn btn-danger" (click)="deleteMedicamentos(medicamentos)">
+          Borrar
+        </button>
       </td>
     </tr>
     </tbody>

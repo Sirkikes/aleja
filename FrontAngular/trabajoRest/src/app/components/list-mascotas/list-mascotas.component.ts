@@ -19,7 +19,7 @@ export class ListMascotasComponent implements OnInit {
     this.service.getMascotas().subscribe(data => (this.mascotas = data));
   }
 
-  deleteMascotas(mascotas: Mascotas): void {
+deleteMascotas(mascotas: Mascotas): void {
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -30,11 +30,28 @@ export class ListMascotasComponent implements OnInit {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.value) {
-        Swal.fire(
-          'Deleted!',
-          'Your file has been deleted.',
-          'success'
-        )
+        this.service.deleteMascotas(mascotas.id).subscribe({
+          next: result => {
+            Swal.fire(
+              'Deleted!',
+              'Your file has been deleted.',
+              'success'
+            );
+            this.service.getMascotas().subscribe({
+              next: result => {
+                this.mascotas=result;
+              }
+            });
+          },
+          error: error => {
+            Swal.fire(
+              'Error!',
+               error,
+              'warning'
+            );
+          }
+        })
+
       }
     });
   }
