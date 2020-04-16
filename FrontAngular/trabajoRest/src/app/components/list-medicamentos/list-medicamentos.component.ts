@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Medicamentos } from '../../model/medicamentos';
 import { MedicamentosServices } from '../../services/medicamentos.service';
 import { Router } from '@angular/router';
-import swal from 'sweetalert2';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -37,6 +36,7 @@ export class ListMedicamentosComponent implements OnInit {
         )
       }
     });
+
   }
 
   editMedicamentos(medicamentos: Medicamentos): void {

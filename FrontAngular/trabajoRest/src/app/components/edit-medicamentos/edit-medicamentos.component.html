@@ -1,1 +1,22 @@
-<p>edit-medicamentos works!</p>
+<div class="col">
+  <h2 class="text-center">Editar Medicamentos</h2>
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="id">Id:</label>
+      <input formControlName="id" placeholder="Id" name="id" class="form-control" id="id" required>
+    </div>
+
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input formControlName="nombre" placeholder="Nombre" name="nombre" class="form-control" id="nombre" required>
+    </div>
+
+    <div class="form-group">
+      <label for="dosis">Dosis:</label>"
+      <input formControlName="dosis" placeholder="Dosis" name="dosis"class="form-control" id="dosis" required>
+    </div>
+
+    <button class="btn btn-success">Aceptar</button>
+<button class="btn btn-primary" routerLink="/list-mascotas">Regresar</button>
+</form>
+</div>
