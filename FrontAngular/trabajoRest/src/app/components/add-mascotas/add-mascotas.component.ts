@@ -35,8 +35,8 @@ export class AddMascotasComponent implements OnInit {
         Swal.fire({
           title: 'Mascota creada con éxito!',
           //text: 'Do you want to continue',
-           icon: 'error',
-           confirmButtonText: 'Cool'
+           icon: 'success',
+           confirmButtonText: 'Aceptar'
         });
        /* swal({
           position: 'top',
