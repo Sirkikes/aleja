@@ -31,9 +31,8 @@ export class AddMedicamentosComponent implements OnInit {
         this.router.navigate(['list-medicamentos']);
         Swal.fire({
           title: 'Medicamento creado con éxito!',
-           icon: 'error',
            icon: 'success',
-           confirmButtonText: 'Cool'
+           confirmButtonText: 'Aceptar'
         });
        /* swal({
           position: 'top',
