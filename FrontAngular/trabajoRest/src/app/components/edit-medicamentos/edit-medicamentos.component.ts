@@ -39,9 +39,10 @@ export class EditMedicamentosComponent implements OnInit {
     this.service.getMedicamento(+medicamentosId) .subscribe(data => {
 
       this.editForm.patchValue({
-        id: data.id,
+       id: data.id,
         identificacion: data.identificacion,
-        nombre: data.nombre
+        nombre: data.nombre,
+        dosis: data.dosis
 
       });
     });

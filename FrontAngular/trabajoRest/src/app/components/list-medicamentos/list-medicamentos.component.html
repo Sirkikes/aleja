@@ -6,8 +6,7 @@
     <thead>
     <tr>
       <th class="hidden">Id</th>
-      <th>Nombre</th>
-      <th>Dosis</th>
+
       <th>Identificacion</th>
       <th>Nombre</th>
       <th>Dosis</th>
@@ -18,7 +17,6 @@
     <tbody>
     <tr *ngFor="let medicamentos of medicamentos">
       <td class="hidden">{{ medicamentos.id }}</td>
-      <td>{{ medicamentos.nombre }}</td>
       <td>{{ medicamentos.identificacion }}</td>
       <td>{{ medicamentos.nombre }}</td>
       <td>{{ medicamentos.dosis }}</td>

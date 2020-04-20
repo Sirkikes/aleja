@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "trabajoRest"
+    }
+  },
+  "defaultProject": "trabajoRest",
+  "cli": {
+    "analytics": "0a81e825-18ce-404b-93f4-6caf6a2ff4d3"
+  }
 }
